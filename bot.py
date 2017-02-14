@@ -1,13 +1,11 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-from email.mime import text
 
 import telebot
 import re
 
 import config
 import markups
-import urllib2
 import utils
 from config import wcapi
 from database import User, Item, db
