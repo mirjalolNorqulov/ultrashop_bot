@@ -1,0 +1,6 @@
+gunicorn
+Flask
+pyTelegramBotAPI==2.3.0
+woocommerce
+xlsxwriter
+peewee
