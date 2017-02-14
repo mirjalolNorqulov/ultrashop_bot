@@ -17,7 +17,8 @@ bot = telebot.TeleBot(config.TOKEN)
 @bot.message_handler(commands=['start'])
 def start(message):
     products = wcapi.get("products").json()
-    bot.send_message(message.chat.id, text="Ahah bot started")
+    
+    bot.send_message(message.chat.id, text="Ahah bot started " + products[0]['name'])
     
 '''
 def get_category(name):
