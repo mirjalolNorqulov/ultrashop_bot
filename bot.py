@@ -14,7 +14,10 @@ from telebot.types import ReplyKeyboardMarkup, KeyboardButton
 
 bot = telebot.TeleBot(config.TOKEN)
 
-
+@bot.message_handler(commands=['start'])
+def start(message):
+    bot.send_message(message.chat.id, text="Ahah bot started")
+'''
 def get_category(name):
     cats = filter(lambda cat: cat['name'] == name, markups.categories)
     if cats:
@@ -255,3 +258,6 @@ def phone_number_step(message, user, items):
         text = "Пожалуйста, отправьте свой номер телефона, используя ниже кнопки"
         msg = bot.send_message(message.chat.id, text=text)
         bot.register_next_step_handler(msg, lambda m: phone_number_step(message, user, items))
+
+
+'''
