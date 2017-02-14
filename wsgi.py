@@ -27,7 +27,7 @@ def getMessage():
 @server.route("/")
 def webhook():
     bot.remove_webhook()
-    bot.set_webhook(url="https://ultrashop-bot.herokuapp.com/bot")
+    #bot.set_webhook(url="https://ultrashop-bot.herokuapp.com/bot")
     return "!", 200
 
 
