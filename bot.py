@@ -14,13 +14,6 @@ from telebot.types import ReplyKeyboardMarkup, KeyboardButton
 
 bot = telebot.TeleBot(config.TOKEN)
 
-@bot.message_handler(commands=['start'])
-def start(message):
-    products = wcapi.get("products").json()
-    
-    bot.send_message(message.chat.id, text="Ahah bot started " + products[0]['name'])
-    
-'''
 def get_category(name):
     cats = filter(lambda cat: cat['name'] == name, markups.categories)
     if cats:
@@ -45,7 +38,7 @@ def start(message):
     text = u"Добро пожаловать, " + message.from_user.first_name
     bot.send_message(message.chat.id, text=text, reply_markup=markups.root_markup)
 
-
+'''
 @bot.message_handler(func=lambda message: message.text == markups.all_laptops_button.text)
 def all_laptops(message):
     keyboard = ReplyKeyboardMarkup(row_width=1)
