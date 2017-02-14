@@ -1,15 +1,15 @@
-from bot import bot
+'''from bot import bot
 
 if __name__ == '__main__':
     bot.polling(none_stop=True)
-
+'''
 # webhook
 # -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
 
 # !/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-'''
+
 import telebot
 import os
 from flask import Flask, request
@@ -27,7 +27,7 @@ def getMessage():
 @server.route("/")
 def webhook():
     bot.remove_webhook()
-    #bot.set_webhook(url="https://eec22663.ngrok.io/bot")
+    bot.set_webhook(url="https://ultrashop-bot.herokuapp.com/bot")
     return "!", 200
 
 
@@ -35,7 +35,4 @@ def webhook():
 def price_list():
 	utils.generate_price_list(config.wcapi)
 	return "!", 200
-
-server.run(host="0.0.0.0", port=os.environ.get('PORT', 5000))
-server = Flask(__name__)
-'''
+	
