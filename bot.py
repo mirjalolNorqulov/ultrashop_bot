@@ -38,7 +38,7 @@ def start(message):
     text = u"Добро пожаловать, " + message.from_user.first_name
     bot.send_message(message.chat.id, text=text, reply_markup=markups.root_markup)
 
-'''
+
 @bot.message_handler(func=lambda message: message.text == markups.all_laptops_button.text)
 def all_laptops(message):
     keyboard = ReplyKeyboardMarkup(row_width=1)
@@ -255,5 +255,3 @@ def phone_number_step(message, user, items):
         msg = bot.send_message(message.chat.id, text=text)
         bot.register_next_step_handler(msg, lambda m: phone_number_step(message, user, items))
 
-
-'''
